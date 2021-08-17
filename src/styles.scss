@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+    //font-family: mat-font-family($config,'body-1');
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+
+form.submitted input.ng-invalid, 
+input.ng-dirty.ng-invalid,
+form.submitted select.ng-invalid, 
+select.ng-dirty.ng-invalid
+{
+  border: 1px solid red;
+ }
+
+
+// main {
+//  // min-height: calc(100vh - 3.5rem - 8rem);
+//   margin-top: 3.5rem;
+// }

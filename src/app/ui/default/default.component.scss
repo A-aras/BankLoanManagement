@@ -1,0 +1,22 @@
+
+@import "../../../mat-style.scss";
+
+// main {
+    
+// 	display:  block;
+// 	//flex-direction: row;
+//     height: calc(95vh-3.5rem);
+// //justify-content: center;
+//     //align-items: center;
+//     background-image: url('./../../../assets/bg-image.jpg');
+// }
+
+main {
+    background: url('./../../../assets/bg-image.jpg');
+    width: 100%;
+    height: calc(100%-5rem);
+    top:3.5rem;
+    position: relative;
+    z-index: -1;
+    display:block;
+}

@@ -1,0 +1,270 @@
+<main>
+
+
+
+    <div class="form-wrapper">
+        <div class="title">Apply Loan</div>
+
+        <form class="form-horizontal" [formGroup]="loanForm">
+
+            <fieldset>
+                <legend>Loan Info:</legend>
+
+                <div class="field_row">
+                    <div class="field_row__cell form-group field">
+                        <div class="control">
+                            <label for="loanTypeControl">
+                                <select id="loanTypeControl" formControlName="loanTypeControl" placeHolder="test">
+
+                                    <option [ngValue]="null">Choose Type...</option>
+                                    <option *ngFor="let type of loanType | enumKeyValuelist;" [ngValue]="type.key">
+                                        {{type.value}}</option>
+
+                                </select>
+                                <span class="floating_span">Loan Type</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="field_row__cell form-group field">
+                        <div class="control">
+                            <label for="loanAmountControl">
+                                <input type="text" id="loanAmountControl" formControlName="loanAmountControl"
+                                    placeholder="test">
+                                <span class="floating_span">Loan Amount</span>
+                            </label>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="field_row">
+                    <div class="field_row__cell form-group field">
+                        <div class="control">
+                            <label for="loanAppDateControl">
+                                <input type="date" id="loanAppDateControl" formControlName="loanAppDateControl"
+                                    placeholder="loanAppDateControl" useValueAsDate>
+                                <span class="floating_span">Loan Apply Date</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="field_row__cell form-group field">
+                        <div class="control">
+                            <label for="loanIssueDateControl">
+                                <input type="date" id="loanIssueDateControl" formControlName="loanIssueDateControl"
+                                    placeholder="loanIssueDateControl" useValueAsDate>
+                                <span class="floating_span">Loan Issue Date</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="field_row">
+                    <div class="field_row__cell form-group field">
+                        <div class="control">
+                            <label for="rateOfIntrestContorl">
+                                <input type="input" id="rateOfIntrestContorl" formControlName="rateOfIntrestContorl"
+                                    placeholder="rateOfIntrestContorl">
+                                <span class="floating_span">Rate Of Interest</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="field_row__cell form-group field">
+                        <div class="control">
+                            <label for="loanTenureControl">
+                                <select id="loanTenureControl" formControlName="loanTenureControl" placeHolder="test">
+
+                                    <option [ngValue]="null">Choose Tensure...</option>
+                                    <option *ngFor="let tenure of loanTenure | enumKeyValuelist;"
+                                        [ngValue]="tenure.key">
+                                        {{tenure.value}}</option>
+
+                                </select>
+                                <span class="floating_span">Loan Tenure</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+
+            <fieldset *ngIf='model.loanTypeId==1'>
+                <legend>Education Loan:</legend>
+
+                <form class="form-horizontal" [formGroup]="educationalLoanForm">
+
+                    <div class="field_row">
+                        <div class="field_row__cell form-group field">
+                            <div class="control">
+                                <label for="courseFeeControl">
+                                    <input type="input" id="courseFeeControl" formControlName="courseFeeControl"
+                                        placeholder="courseFeeControl">
+                                    <span class="floating_span">Course Fee</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="field_row__cell form-group field">
+                            <div class="control">
+                                <label for="courseControl">
+                                    <input type="input" id="courseControl" formControlName="courseControl"
+                                        placeholder="courseControl">
+                                    <span class="floating_span">Course Name</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field_row">
+                        <div class="field_row__cell form-group field">
+                            <div class="control">
+                                <label for="fatherNameContorl">
+                                    <input type="input" id="fatherNameContorl" formControlName="fatherNameContorl"
+                                        placeholder="fatherNameContorl">
+                                    <span class="floating_span">Father Name</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="field_row__cell form-group field">
+                            <div class="control">
+                                <label for="fatherOccupationControl">
+                                    <input type="input" id="fatherOccupationControl"
+                                        formControlName="fatherOccupationControl" placeholder="fatherOccupationControl">
+                                    <span class="floating_span">Father Occupation</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field_row">
+                        <div class="field_row__cell form-group field">
+                            <div class="control">
+                                <label for="fatherTotalExpControl">
+                                    <input type="input" id="fatherTotalExpControl"
+                                        formControlName="fatherTotalExpControl" placeholder="fatherTotalExpControl">
+                                    <span class="floating_span">Father Total Experiance</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="field_row__cell form-group field">
+                            <div class="control">
+                                <label for="fatherExpInCurrenEmployer">
+                                    <input type="input" id="fatherExpInCurrenEmployer"
+                                        formControlName="fatherExpInCurrenEmployer"
+                                        placeholder="fatherExpInCurrenEmployer">
+                                    <span class="floating_span">Father Experiance Current Company</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field_row">
+                        <div class="field_row__cell form-group field">
+                            <div class="control">
+                                <label for="rationCardControl">
+                                    <input type="input" id="rationCardControl" formControlName="rationCardControl"
+                                        placeholder="rationCardControl">
+                                    <span class="floating_span">Ration Card No</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="field_row__cell form-group field">
+                            <div class="control">
+                                <label for="fatherAnnualIncomeControl">
+                                    <input type="input" id="fatherAnnualIncomeControl"
+                                        formControlName="fatherAnnualIncomeControl"
+                                        placeholder="fatherAnnualIncomeControl">
+                                    <span class="floating_span">Father Annual Income</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </form>
+
+            </fieldset>
+
+            <fieldset *ngIf='model.loanTypeId==2'>
+                <legend>Personal/Home</legend>
+
+                <form class="form-horizontal" [formGroup]="homeLoanForm">
+
+                    <div class="field_row">
+                        <div class="field_row__cell form-group field">
+                            <div class="control">
+                                <label for="annualIncomeControl">
+                                    <input type="input" id="annualIncomeControl" formControlName="annualIncomeControl"
+                                        placeholder="annualIncomeControl">
+                                    <span class="floating_span">Annual Income</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="field_row__cell form-group field">
+                            <div class="control">
+                                <label for="companyNameControl">
+                                    <input type="input" id="companyNameControl" formControlName="companyNameControl"
+                                        placeholder="companyNameControl">
+                                    <span class="floating_span">Company Name</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field_row">
+                        <div class="field_row__cell form-group field">
+                            <div class="control">
+                                <label for="designationControl">
+                                    <input type="input" id="designationControl" formControlName="designationControl"
+                                        placeholder="designationControl">
+                                    <span class="floating_span">Designation</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="field_row__cell form-group field">
+                            <div class="control">
+                                <label for="totalExpControl">
+                                    <input type="input" id="totalExpControl" formControlName="totalExpControl"
+                                        placeholder="totalExpControl">
+                                    <span class="floating_span">Total Experiance</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field_row">
+                        <div class="field_row__cell form-group field">
+                            <div class="control">
+                                <label for="expInCurrenEmployeer">
+                                    <input type="input" id="expInCurrenEmployeer" formControlName="expInCurrenEmployeer"
+                                        placeholder="expInCurrenEmployeer">
+                                    <span class="floating_span">Experiance In Current Company</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="field_row__cell form-group field"></div>
+                    </div>
+
+                </form>
+            </fieldset>
+
+            <div class="form-button__container">
+                <button class="btn btn-primary"  (click)="onLoanSave()">Save</button>
+                <button class="btn btn-primary" >Cancel</button>
+            </div>
+
+        </form>
+
+
+    </div>
+
+
+
+
+</main>

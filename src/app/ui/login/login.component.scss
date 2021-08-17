@@ -1,0 +1,157 @@
+
+@import "../../../mat-style.scss";
+
+main {
+	display: flex;
+	flex-direction: row;
+	height: 90vh;
+	justify-content: center;
+	align-items: center;
+}
+
+.title {
+	width: 100%;
+	background: $color-primary;
+	padding: 1rem;
+	font-stretch: expanded;
+	font-weight: bolder;
+  color: white;
+  margin-bottom: 1rem;
+  text-align: center;
+  border: none;
+}
+
+.form-wrapper {
+    width: 30rem;
+    max-width: 35rem;
+	box-shadow: 2px 2px 2px 2px $color-primary;
+	padding: 0;
+}
+
+form {
+	width: 100%;
+	text-align: left;
+	padding-left: 1rem;
+	vertical-align: middle;
+	border: 1px solid #ddd;
+  padding: .5rem;
+	display: flex;
+	flex-direction: column;
+	border-radius: 5px;
+	border: none;
+}
+
+form fieldset{
+  border-color: $color-primary;
+   border-style: solid;
+   border-width: 1px;
+  padding: 2px;
+  margin:.5rem 0;
+}
+
+form legend{
+  width: auto;
+  background-color: $color-primary;
+     color: white;
+     padding: 5px 10px;
+     font-size: .75rem;
+     border-radius: 1px;
+     float: none;
+     margin-bottom: 0;
+   }
+
+form .field_row {
+	display: flex;
+	flex-direction: column;
+}
+
+.field_row__cell {
+  min-width: 17rem;
+   justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+@media(min-width:64rem) {
+	.form-wrapper {
+		min-width: 20rem;
+    max-width: 74rem;
+    box-shadow: 2px 2px 2px 2px $color-primary;
+	padding: 0;
+  }
+  
+	form {
+		padding: .5rem;
+  }
+
+  
+	form .field_row {
+		flex-direction: row;
+		justify-content: space-evenly;
+	}
+	.field_row__cell {
+		min-width: 18rem;
+		max-width: 34rem;
+		justify-content: space-evenly;
+	}
+}
+
+form form {
+	padding: 0;
+}
+
+.form-button__container {
+	display: grid;
+	grid-template-columns: 5rem 5rem 1fr;
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
+}
+
+
+label {
+	text-align: center;
+	min-width: 16rem;
+	max-width: 34rem;
+	position: relative;
+}
+
+input,
+select {
+	width: 100%;
+	padding: .2rem 0px;
+	margin-top: 1.2rem;
+	border-color: lighten($color-primary, 30);
+}
+
+
+input::placeholder,
+select::placeholder {
+	opacity: 0;
+}
+
+label:focus-within,
+input:focus-within,
+input:focus-visible,
+select:focus-within,
+select:focus-visible {
+	border-color: transparent;
+	outline-color: lighten($color-primary, 30);
+}
+
+.floating_span {
+	color: $color-primary;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translate(.5rem, 1.6rem);
+	font-size: 0.75em;
+	transition-duration: 300ms;
+}
+
+label:focus-within>.floating_span,
+input:not(:placeholder-shown)~.floating_span,
+select:not(:empty)~.floating_span {
+	color: $color-primary;
+	transform: translate(0rem, 0rem);
+}

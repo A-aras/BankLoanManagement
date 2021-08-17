@@ -1,0 +1,44 @@
+<main>
+
+
+
+    <div class="form-wrapper">
+        <div class="title">Sign-in</div>
+
+        <!-- <ngb-datepicker #d></ngb-datepicker> -->
+
+        <form class="form-horizontal" [formGroup]="loginForm">
+
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="userNameControl">
+                            <input type="text" id="userNameControl" formControlName="userNameControl" placeholder="Customer Id">
+                            <span class="floating_span">Customer Id</span>
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="passwordControl">
+                            <input type="text" id="passwordControl" formControlName="passwordControl"
+                                placeholder="Password">
+                            <span class="floating_span">Password</span>
+                        </label>
+
+                    </div>
+                </div>
+    
+
+            <div class="form-button__container">
+                <button class="btn btn-primary" [disabled]="loginForm.invalid" (click)="onLoginClick()">Login</button>
+                <button class="btn btn-primary">Cancel</button>
+            </div>
+
+        </form>
+
+
+    </div>
+
+</main>

@@ -1,0 +1,31 @@
+
+// @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+// @import '@angular/material/theming';
+
+// @include mat-core();
+
+// $config: mat-typography-config();
+
+// $color-config:    mat-color-config();
+
+// $primary: mat-palette($mat-deep-purple, 600, 500, 900);
+// //$primary900: mat-palette($mat-deep-purple, 700);
+// $accent: mat-palette($mat-amber, A400, A300, A600);
+
+$color-primary: #673AB7;
+
+//$color-900:  mat-color($primary900);
+
+$color-accent:  #FFC107;
+
+
+.form-button__container button {
+	//width: 3rem;
+	margin-right: 1rem;
+	background-color: $color-primary;
+	border-radius: 0px;
+	padding:.25rem .25rem ;
+	font-size: .65rem;
+	font-weight: bold;;
+}

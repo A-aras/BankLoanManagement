@@ -1,0 +1,353 @@
+<main>
+
+
+
+    <div class="form-wrapper">
+        <div class="title">Sign-up</div>
+
+        <form class="form-horizontal" [formGroup]="customerFormGroup">
+
+            <div class="field_row">
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="name">
+                            <input type="text" id="name" formControlName="nameControl" placeholder="test">
+                            <span class="floating_span">Name</span>
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="userNameControl">
+                            <input type="text" id="userNameControl" formControlName="userNameControl"
+                                placeholder="test">
+                            <span class="floating_span">userNameControl</span>
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="field_row">
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="emailAddressControl">
+                            <input type="input" id="emailAddressControl" formControlName="emailAddressControl"
+                                placeholder="Email">
+                            <span class="floating_span">Email</span>
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="passwordControl">
+                            <input type="password" id="passwordControl" formControlName="passwordControl"
+                                placeholder="password">
+                            <span class="floating_span">Password</span>
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="field_row">
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="contactNoControl">
+                            <input type="text" id="contactNoControl" formControlName="contactNoControl"
+                                placeholder="number">
+                            <span class="floating_span">Mobile No</span>
+                        </label>
+
+                    </div>
+                </div>
+
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="dobControl">
+                            <input type="date" id="dobControl" formControlName="dobControl" placeholder="dob" useValueAsDate/>
+                            <span class="floating_span">DOB</span>
+                        </label>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="field_row">
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="addressControl">
+                            <input type="text" id="addressControl" formControlName="addressControl"
+                                placeholder="Address" />
+                            <span class="floating_span">Address</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="stateControl">
+                            <input type="text" id="stateControl" formControlName="stateControl" placeholder="State" />
+                            <span class="floating_span">State</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field_row">
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="countryControl">
+                            <input type="text" id="countryControl" formControlName="countryControl"
+                                placeholder="Country" />
+                            <span class="floating_span">Country</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="citizenshipControl">
+                            <select id="citizenshipControl" formControlName="citizenshipControl" placeHolder="test">
+
+                                <option [ngValue]="null">Choose Citizenship...</option>
+                                <option *ngFor="let citizen of citizenship | enumKeyValuelist;" [ngValue]="citizen.key">
+                                    {{citizen.value}}</option>
+
+                            </select>
+                            <span class="floating_span">Citizenship</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field_row">
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="citizenStatusControl">
+                            <select id="citizenStatusControl" formControlName="citizenStatusControl" placeHolder="test"
+                                disabled>
+
+                                <option [ngValue]="null">NA</option>
+                                <option *ngFor="let citizen of citizenshipStatus | enumKeyValuelist;"
+                                    [ngValue]="citizen.key">{{citizen.value}}</option>
+
+                            </select>
+                            <span class="floating_span">Citizen Status</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="genderControl">
+                            <select id="genderControl" formControlName="genderControl" placeHolder="test">
+
+                                <option [ngValue]="null">Choose Gender...</option>
+                                <option *ngFor="let gen of genderes$ | async;" [ngValue]="gen.id">{{gen.code}}
+                                </option>
+
+                            </select>
+                            <span class="floating_span">Gender</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field_row">
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="identityProofControl">
+                            <select id="identityProofControl" formControlName="identityProofControl" placeHolder="test">
+
+                                <option [ngValue]="null">Select Id Type...</option>
+                                <option *ngFor="let idType of idProofTypes$ | async;"
+                                    [ngValue]="idType.id">{{idType.code}}</option>
+
+                            </select>
+                            <span class="floating_span">Identity Proof</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="identityDocNoControl">
+                            <input type="text" id="identityDocNoControl" formControlName="identityDocNoControl"
+                                placeholder="identityDocNoControl" />
+                            <span class="floating_span">Identity Proof No</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field_row">
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="accountTypeControl">
+                            <select id="accountTypeControl" formControlName="accountTypeControl" placeHolder="test">
+
+                                <option [ngValue]="null">Select Acc Type...</option>
+                                <option *ngFor="let accType of accountTypes$ | async;" [ngValue]="accType.id">
+                                    {{accType.code}}</option>
+
+                            </select>
+                            <span class="floating_span">Account Type</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="branchNameControl">
+                            <input type="text" id="branchNameControl" formControlName="branchNameControl"
+                                placeholder="branchNameControl" />
+                            <span class="floating_span">Branch Name</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field_row">
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="initialDepositAmountControl">
+                            <input type="text" id="initialDepositAmountControl"
+                                formControlName="initialDepositAmountControl"
+                                placeholder="initialDepositAmountControl" />
+                            <span class="floating_span">Initial Deposit Amount</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="regDateControl">
+                            <input type="date" id="regDateControl" formControlName="regDateControl"
+                                placeholder="regDateControl" useValueAsDate/>
+                            <span class="floating_span">Registration Date</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field_row">
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="refAccHolderNameControl">
+                            <input type="text" id="refAccHolderNameControl" formControlName="refAccHolderNameControl"
+                                placeholder="refAccHolderNameControl" />
+                            <span class="floating_span">Reference Account Holder Name</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="refAccHolderNameControl">
+                            <input type="text" id="refAccHolderAccNoControl" formControlName="refAccHolderAccNoControl"
+                                placeholder="refAccHolderAccNoControl" />
+                            <span class="floating_span">Reference Account Holder Number</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field_row">
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="refAccHolderAddress">
+                            <input type="text" id="refAccHolderAddress" formControlName="refAccHolderAddress"
+                                placeholder="refAccHolderAddress" />
+                            <span class="floating_span">Reference Account Address</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="guradianTypeControl">
+                            <select id="guradianTypeControl" formControlName="guradianTypeControl" placeHolder="test">
+
+                                <option [ngValue]="null">Choose Guardian...</option>
+                                <option *ngFor="let item of guradianTypes$ | async ;" [ngValue]="item.id">
+                                    {{item.code}}</option>
+
+                            </select>
+                            <span class="floating_span">Guardian Status</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="field_row">
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="guardianNameControl">
+                            <input type="text" id="guardianNameControl" formControlName="guardianNameControl"
+                                placeholder="guardianNameControl" />
+                            <span class="floating_span">Guardian Name</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="maritalStatusControl">
+                            <select id="maritalStatusControl" formControlName="maritalStatusControl" placeHolder="test">
+
+                                <option [ngValue]="null">Choose Marital Status...</option>
+                                <option *ngFor="let item of maritalStatusTpypes$ | async;" [ngValue]="item.id">
+                                    {{item.code}}</option>
+
+                            </select>
+                            <span class="floating_span">Marital Status</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+ <!-- <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="maritalStatusControl">
+                            <select id="maritalStatusControl" formControlName="maritalStatusControl" placeHolder="test">
+
+                                <option [ngValue]="null">Choose Marital Status...</option>
+                                <option *ngFor="let item of maritalStatus | enumKeyValuelist;" [ngValue]="item.key">
+                                    {{item.value}}</option>
+
+                            </select>
+                            <span class="floating_span">Marital Status</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="field_row__cell form-group field">
+                    <div class="control">
+                        <label for="dobControl">
+                            <input type="date" id="dobControl" formControlName="dobControl" placeholder="dob" useValueAsDate/>
+                            <span class="floating_span">DOB</span>
+                        </label>
+    
+                    </div>
+                </div> -->
+    
+
+
+            <div class="form-button__container">
+                <button class="btn btn-primary"  (click)='onUserSave()'>Save</button>
+                <button class="btn btn-primary" >Cancel</button>
+            </div>
+
+        </form>
+
+
+    </div>
+
+
+
+
+</main>

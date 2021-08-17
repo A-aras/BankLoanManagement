@@ -1,0 +1,105 @@
+@import "./../shared/";
+@import '@angular/material/theming';
+
+@include mat-core();
+
+
+
+main {
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+    //box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5);
+     //padding-top: 3rem;
+}
+
+.title {
+    width: 100%;
+    background: $color-primary;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:1rem ;
+    font-stretch: expanded;
+    font-weight: bolder;
+    color: white;
+    margin-bottom: 2rem;
+  }
+
+.form-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30rem;
+    max-width: 35rem;
+    box-shadow: 2px 2px 2px 2px $color-primary; 
+ 
+  
+}
+
+form{
+    text-align: left;
+    padding-left: 1rem;
+    vertical-align: middle;
+    
+}
+
+// mat-form-field{
+//     display: block;
+//     min-width: 20rem;
+//     max-width: 25rem;
+// }
+
+.form-group,
+.field
+{
+    //display: block;
+    min-width: 15rem;
+    max-width: 25rem;
+}
+
+input[formControlName]
+{
+outline-color: lighten($color-primary,30) ;
+width: 100%;
+}
+
+input[formControlName]:focus-visible
+{
+outline-color: lighten($color-primary,20) ;
+}
+
+.form-button__container
+{
+    display: grid;
+    grid-template-columns: 5rem 5rem 1fr;
+    //flex-direction: row-reverse;
+    //flex-flow: row-reverse;
+    
+    //align-items: center;
+    //justify-content: center;
+    //align-items:flex-end;
+    margin-bottom: .5rem;
+    //padding-left: 1rem;
+}
+
+.form-button__container button{
+    width: 3rem;
+}
+
+// .login_button
+// {
+// grid-column-start: 2;
+// width: 3rem;
+// //margin: .5rem;
+// // padding: .5rem;
+// }
+
+// .cancel_button{
+//     grid-column-start:3;
+//     width: 3rem;
+//     // padding: .5rem;
+// }
